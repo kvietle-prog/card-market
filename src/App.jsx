@@ -435,17 +435,16 @@ function SetTopCards({ setConfig, onCardClick }) {
           const trendColor = change7d != null ? (change7d >= 0 ? "#16a34a" : "#dc2626") : "var(--color-text-secondary)";
           return (
             <div key={card.id || idx} onClick={() => onCardClick(card, setConfig.label)}
-              style={{ background: "var(--color-background-primary)", border: "0.5px solid var(--color-border-tertiary)", borderRadius: 8, padding: "10px 14px", cursor: "pointer", display: "flex", alignItems: "center", gap: 10 }}
-              onMouseEnter={e => e.currentTarget.style.borderColor = "var(--color-border-secondary)"}
-              onMouseLeave={e => e.currentTarget.style.borderColor = "var(--color-border-tertiary)"}
+              className="card-row"
+              style={{ background: "var(--color-background-primary)", border: "0.5px solid var(--color-border-tertiary)", borderRadius: 10, padding: "12px 14px", cursor: "pointer", display: "flex", alignItems: "center", gap: 10, minHeight: 56, transition: "opacity 0.15s, transform 0.15s" }}
             >
-              <div style={{ width: 20, height: 20, borderRadius: "50%", background: "var(--color-background-secondary)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10, fontWeight: 700, color: "var(--color-text-secondary)", flexShrink: 0 }}>{idx + 1}</div>
+              <div style={{ width: 24, height: 24, borderRadius: "50%", background: "var(--color-background-secondary)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 11, fontWeight: 700, color: "var(--color-text-secondary)", flexShrink: 0 }}>{idx + 1}</div>
               <div style={{ flex: 1, minWidth: 0 }}>
-                <div style={{ fontSize: 13, fontWeight: 600, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{card.name}</div>
-                <div style={{ fontSize: 11, color: "var(--color-text-secondary)", marginTop: 1 }}>{card.rarity || ""}{card.number ? ` · #${card.number}` : ""}</div>
+                <div style={{ fontSize: 14, fontWeight: 600, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{card.name}</div>
+                <div style={{ fontSize: 11, color: "var(--color-text-secondary)", marginTop: 2 }}>{card.rarity || ""}{card.number ? ` · #${card.number}` : ""}</div>
               </div>
               <div style={{ textAlign: "right", flexShrink: 0 }}>
-                <div style={{ fontSize: 14, fontWeight: 700, fontVariantNumeric: "tabular-nums" }}>{price ? `$${Number(price).toLocaleString()}` : "—"}</div>
+                <div style={{ fontSize: 15, fontWeight: 700, fontVariantNumeric: "tabular-nums", color: "var(--color-text-primary)" }}>{price ? `$${Number(price).toLocaleString()}` : "—"}</div>
                 {change7d != null && <div style={{ fontSize: 11, color: trendColor, fontWeight: 600 }}>{change7d >= 0 ? "▲" : "▼"} {Math.abs(change7d).toFixed(1)}%</div>}
               </div>
             </div>
@@ -659,25 +658,59 @@ export default function App() {
 
   const handleCardClick = (card, gameLabel) => setSelectedCard({ card, gameLabel });
 
+  const NAV_ITEMS = [
+    { key: "market", label: "Market", icon: <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 10L10 3L17 10V17H13V13H7V17H3V10Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/></svg> },
+    { key: "search", label: "Search", icon: <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="5.5" stroke="currentColor" strokeWidth="1.5"/><path d="M13.5 13.5L17 17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg> },
+    { key: "scanner", label: "Scanner", icon: <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 7V4.5A1.5 1.5 0 014.5 3H7M13 3H15.5A1.5 1.5 0 0117 4.5V7M17 13V15.5A1.5 1.5 0 0115.5 17H13M7 17H4.5A1.5 1.5 0 013 15.5V13M6 10H14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg> },
+  ];
+
   return (
-    <div style={{ fontFamily: "var(--font-sans)", maxWidth: 760, margin: "0 auto", paddingBottom: 60 }}>
+    <div style={{ fontFamily: "var(--font-sans)", maxWidth: 760, margin: "0 auto", minHeight: "100vh" }}>
+      <style>{`
+        * { -webkit-tap-highlight-color: transparent; }
+        body { overscroll-behavior: none; }
+        .card-row:active { opacity: 0.7; transform: scale(0.99); }
+      `}</style>
+
       <WatchlistTicker />
-      <div style={{ padding: "16px 16px 0" }}>
+
+      <div style={{ padding: "16px 16px 0", paddingBottom: "calc(72px + env(safe-area-inset-bottom))" }}>
         {selectedCard ? (
           <CardDetail card={selectedCard.card} gameLabel={selectedCard.gameLabel} onBack={() => setSelectedCard(null)} />
         ) : (
           <>
-            <div style={{ display: "flex", gap: 4, marginBottom: 18, background: "var(--color-background-secondary)", borderRadius: 10, padding: 4 }}>
-              {[{ key: "market", label: "Market" }, { key: "search", label: "Search" }, { key: "scanner", label: "Scanner" }].map(t => (
-                <button key={t.key} onClick={() => setView(t.key)} style={{ flex: 1, padding: "7px 0", fontSize: 13, fontWeight: 600, border: "none", borderRadius: 7, background: view === t.key ? "var(--color-background-primary)" : "transparent", color: view === t.key ? "var(--color-text-primary)" : "var(--color-text-secondary)", cursor: "pointer", transition: "all 0.15s", boxShadow: view === t.key ? "0 0 0 0.5px var(--color-border-secondary)" : "none" }}>{t.label}</button>
-              ))}
-            </div>
             {view === "market" && <MarketView onCardClick={handleCardClick} />}
             {view === "search" && <SearchView onCardClick={handleCardClick} />}
             {view === "scanner" && <ScannerView onCardClick={handleCardClick} />}
           </>
         )}
       </div>
+
+      {/* Fixed bottom nav bar */}
+      {!selectedCard && (
+        <div style={{
+          position: "fixed", bottom: 0, left: 0, right: 0,
+          background: "var(--color-background-primary)",
+          borderTop: "0.5px solid var(--color-border-tertiary)",
+          display: "flex",
+          paddingBottom: "env(safe-area-inset-bottom)",
+          zIndex: 100,
+        }}>
+          {NAV_ITEMS.map(t => (
+            <button key={t.key} onClick={() => setView(t.key)} style={{
+              flex: 1, padding: "10px 0 8px", border: "none", background: "transparent",
+              display: "flex", flexDirection: "column", alignItems: "center", gap: 3,
+              color: view === t.key ? "#185fa5" : "var(--color-text-secondary)",
+              cursor: "pointer", fontSize: 10, fontWeight: view === t.key ? 600 : 400,
+              letterSpacing: "0.04em", textTransform: "uppercase",
+              transition: "color 0.15s",
+            }}>
+              {t.icon}
+              {t.label}
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
