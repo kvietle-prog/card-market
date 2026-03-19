@@ -34,13 +34,13 @@ export default async function handler(req, res) {
       const limitParam = `&limit=${limit || 10}`;
       const printingParam = printing ? `&printing=${encodeURIComponent(printing)}` : "";
       const minParam = minPrice ? `&min_price=${minPrice}` : "&min_price=1.00";
-      const data = await jtFetch(`/cards?${gameParam}${setParam}${orderByParam}${limitParam}${printingParam}${minParam}&include_price_history=false&include_statistics=true`, apiKey);
+      const data = await jtFetch(`/cards?${gameParam}${setParam}${orderByParam}${limitParam}${printingParam}${minParam}&include_price_history=false`, apiKey);
       return res.status(200).json({ cards: data.data || [], pagination: data.pagination });
     }
 
     // Get full card with price history
     if (action === "card") {
-      const data = await jtFetch(`/cards?cardId=${encodeURIComponent(cardId)}&include_price_history=true&include_statistics=true`, apiKey);
+      const data = await jtFetch(`/cards?cardId=${encodeURIComponent(cardId)}&include_price_history=true`, apiKey);
       return res.status(200).json({ card: (data.data || [])[0] || null });
     }
 
@@ -49,7 +49,7 @@ export default async function handler(req, res) {
       const gameParam = game ? `&game=${encodeURIComponent(game)}` : "";
       const setParam = setId ? `&set=${encodeURIComponent(setId)}` : "";
       const qParam = q ? `&q=${encodeURIComponent(q)}` : "";
-      const data = await jtFetch(`/cards?limit=10${gameParam}${setParam}${qParam}&include_price_history=false&include_statistics=true&min_price=1.00`, apiKey);
+      const data = await jtFetch(`/cards?limit=10${gameParam}${setParam}${qParam}&include_price_history=false&min_price=1.00`, apiKey);
       return res.status(200).json({ cards: data.data || [] });
     }
 
@@ -57,7 +57,7 @@ export default async function handler(req, res) {
     if (action === "movers") {
       const gameParam = game ? `&game=${encodeURIComponent(game)}` : "";
       const period = orderBy || "7d";
-      const data = await jtFetch(`/cards?${gameParam}&orderBy=${period}&order=desc&limit=20&min_price=1.00&include_price_history=false&include_statistics=true`, apiKey);
+      const data = await jtFetch(`/cards?${gameParam}&orderBy=${period}&order=desc&limit=20&min_price=1.00&include_price_history=false`, apiKey);
       return res.status(200).json({ cards: data.data || [] });
     }
 
@@ -65,7 +65,7 @@ export default async function handler(req, res) {
     if (action === "deals") {
       const gameParam = game ? `&game=${encodeURIComponent(game)}` : "";
       const period = orderBy || "7d";
-      const data = await jtFetch(`/cards?${gameParam}&orderBy=${period}&order=asc&limit=20&min_price=1.00&include_price_history=false&include_statistics=true`, apiKey);
+      const data = await jtFetch(`/cards?${gameParam}&orderBy=${period}&order=asc&limit=20&min_price=1.00&include_price_history=false`, apiKey);
       return res.status(200).json({ cards: data.data || [] });
     }
 
