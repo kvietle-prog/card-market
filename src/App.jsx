@@ -2,18 +2,25 @@ import { useState, useEffect, useRef, useCallback } from "react";
 
 const GAME_CONFIGS = [
   { game: "pokemon", label: "Pokémon", color: { bg: "#faeeda", color: "#412402" } },
-  { game: "one-piece", label: "One Piece", color: { bg: "#fcebeb", color: "#791f1f" } },
-  { game: "dragon-ball-super", label: "Dragon Ball", color: { bg: "#eaf3de", color: "#27500a" } },
+  { game: "one-piece-card-game", label: "One Piece", color: { bg: "#fcebeb", color: "#791f1f" } },
+  { game: "dragon-ball-super-fusion-world", label: "Dragon Ball", color: { bg: "#eaf3de", color: "#27500a" } },
+  { game: "magic-the-gathering", label: "Magic", color: { bg: "#eeedfe", color: "#26215c" } },
+  { game: "yugioh", label: "YuGiOh", color: { bg: "#e6f1fb", color: "#0c447c" } },
 ];
 
+// Set IDs use format: {game}-{set-name} e.g. pokemon-base-set
 const FEATURED_SETS = [
-  { game: "pokemon", label: "Pokémon", setId: "base-set", setName: "Base Set" },
-  { game: "pokemon", label: "Pokémon", setId: "obsidian-flames", setName: "Obsidian Flames" },
-  { game: "pokemon", label: "Pokémon", setId: "evolving-skies", setName: "Evolving Skies" },
-  { game: "one-piece", label: "One Piece", setId: "romance-dawn", setName: "Romance Dawn" },
-  { game: "one-piece", label: "One Piece", setId: "paramount-war", setName: "Paramount War" },
-  { game: "dragon-ball-super", label: "Dragon Ball", setId: "galactic-battle", setName: "Galactic Battle" },
-  { game: "dragon-ball-super", label: "Dragon Ball", setId: "union-force", setName: "Union Force" },
+  { game: "pokemon", label: "Pokémon", setId: "pokemon-base-set", setName: "Base Set" },
+  { game: "pokemon", label: "Pokémon", setId: "pokemon-obsidian-flames", setName: "Obsidian Flames" },
+  { game: "pokemon", label: "Pokémon", setId: "pokemon-evolving-skies", setName: "Evolving Skies" },
+  { game: "pokemon", label: "Pokémon", setId: "pokemon-prismatic-evolutions", setName: "Prismatic Evolutions" },
+  { game: "one-piece-card-game", label: "One Piece", setId: "one-piece-card-game-romance-dawn", setName: "Romance Dawn" },
+  { game: "one-piece-card-game", label: "One Piece", setId: "one-piece-card-game-paramount-war", setName: "Paramount War" },
+  { game: "one-piece-card-game", label: "One Piece", setId: "one-piece-card-game-wings-of-the-captain", setName: "Wings of the Captain" },
+  { game: "dragon-ball-super-fusion-world", label: "Dragon Ball", setId: "dragon-ball-super-fusion-world-galactic-battle", setName: "Galactic Battle" },
+  { game: "dragon-ball-super-fusion-world", label: "Dragon Ball", setId: "dragon-ball-super-fusion-world-awakened-pulse", setName: "Awakened Pulse" },
+  { game: "magic-the-gathering", label: "Magic", setId: "magic-the-gathering-alpha", setName: "Alpha" },
+  { game: "yugioh", label: "YuGiOh", setId: "yugioh-legend-of-blue-eyes-white-dragon", setName: "Legend of Blue Eyes" },
 ];
 
 function getMarketPrice(card) {
@@ -295,7 +302,7 @@ function SetTopCards({ setConfig, onCardClick }) {
 }
 
 function MarketView({ onCardClick }) {
-  const [activeGames, setActiveGames] = useState(["pokemon", "one-piece", "dragon-ball-super"]);
+  const [activeGames, setActiveGames] = useState(["pokemon", "one-piece-card-game", "dragon-ball-super-fusion-world"]);
   const [search, setSearch] = useState("");
   const [selectedSet, setSelectedSet] = useState("all");
 
@@ -350,8 +357,8 @@ function ScannerView() {
     setScanning(true);
     const newAlerts = [];
     try {
-      const games = ["pokemon", "one-piece", "dragon-ball-super"];
-      const gameLabels = { "pokemon": "Pokémon", "one-piece": "One Piece", "dragon-ball-super": "Dragon Ball" };
+      const games = ["pokemon", "one-piece-card-game", "dragon-ball-super-fusion-world"];
+      const gameLabels = { "pokemon": "Pokémon", "one-piece-card-game": "One Piece", "dragon-ball-super-fusion-world": "Dragon Ball" };
 
       await Promise.all(games.map(async game => {
         const [moversResp, dealsResp] = await Promise.all([
