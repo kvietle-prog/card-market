@@ -11,9 +11,10 @@ const GAME_CONFIGS = [
 const FEATURED_SETS = [
   { game: "pokemon", label: "Pokémon", setId: "base-set-shadowless-pokemon", setName: "Base Set (Shadowless)" },
   { game: "pokemon", label: "Pokémon", setId: "base-set-pokemon", setName: "Base Set" },
-  { game: "pokemon", label: "Pokémon", setId: "obsidian-flames-pokemon", setName: "Obsidian Flames" },
-  { game: "pokemon", label: "Pokémon", setId: "evolving-skies-pokemon", setName: "Evolving Skies" },
-  { game: "pokemon", label: "Pokémon", setId: "prismatic-evolutions-pokemon", setName: "Prismatic Evolutions" },
+  { game: "pokemon", label: "Pokémon", setId: "sv03-obsidian-flames-pokemon", setName: "Obsidian Flames" },
+  { game: "pokemon", label: "Pokémon", setId: "swsh07-evolving-skies-pokemon", setName: "Evolving Skies" },
+  { game: "pokemon", label: "Pokémon", setId: "sv-prismatic-evolutions-pokemon", setName: "Prismatic Evolutions" },
+  { game: "pokemon", label: "Pokémon", setId: "sv-scarlet-violet-151-pokemon", setName: "Scarlet & Violet 151" },
   { game: "one-piece-card-game", label: "One Piece", setId: "romance-dawn-one-piece-card-game", setName: "Romance Dawn" },
   { game: "one-piece-card-game", label: "One Piece", setId: "paramount-war-one-piece-card-game", setName: "Paramount War" },
   { game: "one-piece-card-game", label: "One Piece", setId: "wings-of-the-captain-one-piece-card-game", setName: "Wings of the Captain" },
@@ -22,7 +23,6 @@ const FEATURED_SETS = [
   { game: "dragon-ball-super-fusion-world", label: "Dragon Ball", setId: "awakened-pulse-dragon-ball-super-fusion-world", setName: "Awakened Pulse" },
   { game: "dragon-ball-super-fusion-world", label: "Dragon Ball", setId: "blazing-aura-dragon-ball-super-fusion-world", setName: "Blazing Aura" },
   { game: "dragon-ball-super-fusion-world", label: "Dragon Ball", setId: "raging-roar-dragon-ball-super-fusion-world", setName: "Raging Roar" },
-  { game: "dragon-ball-super-fusion-world", label: "Dragon Ball", setId: "rivals-clash-dragon-ball-super-fusion-world", setName: "Rivals Clash" },
   { game: "dragon-ball-super-fusion-world", label: "Dragon Ball", setId: "ultra-limit-dragon-ball-super-fusion-world", setName: "Ultra Limit" },
 ];
 
