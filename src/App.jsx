@@ -8,37 +8,52 @@ const GAME_CONFIGS = [
   { game: "yugioh", label: "YuGiOh", color: { bg: "#e6f1fb", color: "#0c447c" } },
 ];
 
-// Set IDs use format: {game}-{set-name} e.g. pokemon-base-set
 const FEATURED_SETS = [
-  { game: "pokemon", label: "Pokémon", setId: "pokemon-base-set", setName: "Base Set" },
-  { game: "pokemon", label: "Pokémon", setId: "pokemon-obsidian-flames", setName: "Obsidian Flames" },
-  { game: "pokemon", label: "Pokémon", setId: "pokemon-evolving-skies", setName: "Evolving Skies" },
-  { game: "pokemon", label: "Pokémon", setId: "pokemon-prismatic-evolutions", setName: "Prismatic Evolutions" },
-  { game: "one-piece-card-game", label: "One Piece", setId: "one-piece-card-game-romance-dawn", setName: "Romance Dawn" },
-  { game: "one-piece-card-game", label: "One Piece", setId: "one-piece-card-game-paramount-war", setName: "Paramount War" },
-  { game: "one-piece-card-game", label: "One Piece", setId: "one-piece-card-game-wings-of-the-captain", setName: "Wings of the Captain" },
-  { game: "dragon-ball-super-fusion-world", label: "Dragon Ball", setId: "dragon-ball-super-fusion-world-galactic-battle", setName: "Galactic Battle" },
-  { game: "dragon-ball-super-fusion-world", label: "Dragon Ball", setId: "dragon-ball-super-fusion-world-awakened-pulse", setName: "Awakened Pulse" },
-  { game: "magic-the-gathering", label: "Magic", setId: "magic-the-gathering-alpha", setName: "Alpha" },
-  { game: "yugioh", label: "YuGiOh", setId: "yugioh-legend-of-blue-eyes-white-dragon", setName: "Legend of Blue Eyes" },
+  { game: "pokemon", label: "Pokémon", setId: "base-set-shadowless-pokemon", setName: "Base Set (Shadowless)" },
+  { game: "pokemon", label: "Pokémon", setId: "base-set-pokemon", setName: "Base Set" },
+  { game: "pokemon", label: "Pokémon", setId: "obsidian-flames-pokemon", setName: "Obsidian Flames" },
+  { game: "pokemon", label: "Pokémon", setId: "evolving-skies-pokemon", setName: "Evolving Skies" },
+  { game: "pokemon", label: "Pokémon", setId: "prismatic-evolutions-pokemon", setName: "Prismatic Evolutions" },
+  { game: "one-piece-card-game", label: "One Piece", setId: "romance-dawn-one-piece-card-game", setName: "Romance Dawn" },
+  { game: "one-piece-card-game", label: "One Piece", setId: "paramount-war-one-piece-card-game", setName: "Paramount War" },
+  { game: "one-piece-card-game", label: "One Piece", setId: "wings-of-the-captain-one-piece-card-game", setName: "Wings of the Captain" },
+  { game: "one-piece-card-game", label: "One Piece", setId: "two-legends-one-piece-card-game", setName: "Two Legends" },
+  { game: "one-piece-card-game", label: "One Piece", setId: "500-years-in-the-future-one-piece-card-game", setName: "500 Years in the Future" },
+  { game: "dragon-ball-super-fusion-world", label: "Dragon Ball", setId: "awakened-pulse-dragon-ball-super-fusion-world", setName: "Awakened Pulse" },
+  { game: "dragon-ball-super-fusion-world", label: "Dragon Ball", setId: "blazing-aura-dragon-ball-super-fusion-world", setName: "Blazing Aura" },
+  { game: "dragon-ball-super-fusion-world", label: "Dragon Ball", setId: "raging-roar-dragon-ball-super-fusion-world", setName: "Raging Roar" },
+  { game: "dragon-ball-super-fusion-world", label: "Dragon Ball", setId: "rivals-clash-dragon-ball-super-fusion-world", setName: "Rivals Clash" },
+  { game: "dragon-ball-super-fusion-world", label: "Dragon Ball", setId: "ultra-limit-dragon-ball-super-fusion-world", setName: "Ultra Limit" },
 ];
 
 function getMarketPrice(card) {
   const variants = card.variants || [];
-  const nm = variants.find(v => (v.condition || "").toLowerCase().includes("near mint") || (v.condition || "").toLowerCase() === "nm") || variants[0];
-  return nm?.price || nm?.marketPrice || card.price || null;
+  const nm = variants.find(v => v.condition === "Near Mint") || 
+             variants.find(v => v.condition === "Lightly Played") ||
+             variants[0];
+  return nm?.price || null;
 }
 
 function getChange(card, period) {
-  const s = card.statistics || card.stats || {};
-  return s[`${period}ChangePercent`] ?? s[`change_${period}`] ?? s[period] ?? null;
+  const variants = card.variants || [];
+  const nm = variants.find(v => v.condition === "Near Mint") ||
+             variants.find(v => v.condition === "Lightly Played") ||
+             variants[0];
+  if (!nm) return null;
+  const key = `priceChange${period}`;
+  return nm[key] ?? null;
 }
 
 function getPriceHistory(card) {
   const variants = card.variants || [];
-  const nm = variants.find(v => (v.condition || "").toLowerCase().includes("near mint")) || variants[0];
-  const history = nm?.price_history || nm?.priceHistory || [];
-  return history.map(h => ({ price: h.price || h.marketPrice || h.value, date: new Date((h.date || h.timestamp || Date.now() / 1000) * 1000) })).filter(h => h.price);
+  const nm = variants.find(v => v.condition === "Near Mint") ||
+             variants.find(v => v.condition === "Lightly Played") ||
+             variants[0];
+  const history = nm?.priceHistory || [];
+  return history.map(h => ({
+    price: h.price || h.value,
+    date: new Date((h.date || h.timestamp || Date.now() / 1000) * 1000)
+  })).filter(h => h.price);
 }
 
 function GameTag({ label }) {
