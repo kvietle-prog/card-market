@@ -436,15 +436,15 @@ function SetTopCards({ setConfig, onCardClick }) {
           return (
             <div key={card.id || idx} onClick={() => onCardClick(card, setConfig.label)}
               className="card-row"
-              style={{ background: "var(--color-background-primary)", border: "0.5px solid var(--color-border-tertiary)", borderRadius: 10, padding: "12px 14px", cursor: "pointer", display: "flex", alignItems: "center", gap: 10, minHeight: 56, transition: "opacity 0.15s, transform 0.15s" }}
+              style={{ background: "var(--color-background-primary)", border: "0.5px solid var(--color-border-tertiary)", borderRadius: 10, padding: "11px 12px", cursor: "pointer", display: "flex", alignItems: "center", gap: 8, minHeight: 52, transition: "opacity 0.15s, transform 0.15s" }}
             >
-              <div style={{ width: 24, height: 24, borderRadius: "50%", background: "var(--color-background-secondary)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 11, fontWeight: 700, color: "var(--color-text-secondary)", flexShrink: 0 }}>{idx + 1}</div>
-              <div style={{ flex: 1, minWidth: 0 }}>
-                <div style={{ fontSize: 14, fontWeight: 600, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{card.name}</div>
-                <div style={{ fontSize: 11, color: "var(--color-text-secondary)", marginTop: 2 }}>{card.rarity || ""}{card.number ? ` · #${card.number}` : ""}</div>
+              <div style={{ width: 22, height: 22, borderRadius: "50%", background: "var(--color-background-secondary)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10, fontWeight: 700, color: "var(--color-text-secondary)", flexShrink: 0 }}>{idx + 1}</div>
+              <div style={{ flex: 1, minWidth: 0, overflow: "hidden" }}>
+                <div style={{ fontSize: 13, fontWeight: 600, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{card.name}</div>
+                <div style={{ fontSize: 11, color: "var(--color-text-secondary)", marginTop: 1, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{card.rarity || ""}{card.number && card.number !== "N/A" ? ` · #${card.number}` : ""}</div>
               </div>
-              <div style={{ textAlign: "right", flexShrink: 0 }}>
-                <div style={{ fontSize: 15, fontWeight: 700, fontVariantNumeric: "tabular-nums", color: "var(--color-text-primary)" }}>{price ? `$${Number(price).toLocaleString()}` : "—"}</div>
+              <div style={{ textAlign: "right", flexShrink: 0, minWidth: 70 }}>
+                <div style={{ fontSize: 14, fontWeight: 700, fontVariantNumeric: "tabular-nums", color: "var(--color-text-primary)" }}>{price ? `$${Number(price).toLocaleString()}` : "—"}</div>
                 {change7d != null && <div style={{ fontSize: 11, color: trendColor, fontWeight: 600 }}>{change7d >= 0 ? "▲" : "▼"} {Math.abs(change7d).toFixed(1)}%</div>}
               </div>
             </div>
@@ -674,7 +674,7 @@ export default function App() {
 
       <WatchlistTicker />
 
-      <div style={{ padding: "16px 16px 0", paddingBottom: "calc(72px + env(safe-area-inset-bottom))" }}>
+      <div style={{ padding: "12px 12px 0", paddingBottom: "calc(72px + env(safe-area-inset-bottom))" }}>
         {selectedCard ? (
           <CardDetail card={selectedCard.card} gameLabel={selectedCard.gameLabel} onBack={() => setSelectedCard(null)} />
         ) : (
