@@ -6,29 +6,81 @@ const GAME_CONFIGS = [
   { game: "dragon-ball-super-fusion-world", label: "Dragon Ball", color: { bg: "#eaf3de", color: "#27500a" } },
   { game: "magic-the-gathering", label: "Magic", color: { bg: "#eeedfe", color: "#26215c" } },
   { game: "yugioh", label: "YuGiOh", color: { bg: "#e6f1fb", color: "#0c447c" } },
+  { game: "digimon-card-game", label: "Digimon", color: { bg: "#e6f1fb", color: "#185fa5" } },
+  { game: "disney-lorcana", label: "Lorcana", color: { bg: "#fbeaf0", color: "#72243e" } },
 ];
 
 const FEATURED_SETS = [
-  { game: "pokemon", label: "Pokémon", setId: "base-set-shadowless-pokemon", setName: "Base Set (Shadowless)" },
+  // Pokémon
+  { game: "pokemon", label: "Pokémon", setId: "base-set-shadowless-pokemon", setName: "Base Set Shadowless" },
   { game: "pokemon", label: "Pokémon", setId: "base-set-pokemon", setName: "Base Set" },
+  { game: "pokemon", label: "Pokémon", setId: "jungle-pokemon", setName: "Jungle" },
+  { game: "pokemon", label: "Pokémon", setId: "fossil-pokemon", setName: "Fossil" },
+  { game: "pokemon", label: "Pokémon", setId: "gym-heroes-pokemon", setName: "Gym Heroes" },
+  { game: "pokemon", label: "Pokémon", setId: "gym-challenge-pokemon", setName: "Gym Challenge" },
+  { game: "pokemon", label: "Pokémon", setId: "neo-genesis-pokemon", setName: "Neo Genesis" },
+  { game: "pokemon", label: "Pokémon", setId: "sv-scarlet-violet-151-pokemon", setName: "Scarlet & Violet 151" },
+  { game: "pokemon", label: "Pokémon", setId: "sv-prismatic-evolutions-pokemon", setName: "Prismatic Evolutions" },
   { game: "pokemon", label: "Pokémon", setId: "sv03-obsidian-flames-pokemon", setName: "Obsidian Flames" },
   { game: "pokemon", label: "Pokémon", setId: "swsh07-evolving-skies-pokemon", setName: "Evolving Skies" },
-  { game: "pokemon", label: "Pokémon", setId: "sv-prismatic-evolutions-pokemon", setName: "Prismatic Evolutions" },
-  { game: "pokemon", label: "Pokémon", setId: "sv-scarlet-violet-151-pokemon", setName: "Scarlet & Violet 151" },
+  { game: "pokemon", label: "Pokémon", setId: "swsh08-fusion-strike-pokemon", setName: "Fusion Strike" },
+  { game: "pokemon", label: "Pokémon", setId: "swsh11-lost-origin-pokemon", setName: "Lost Origin" },
+  { game: "pokemon", label: "Pokémon", setId: "hidden-fates-pokemon", setName: "Hidden Fates" },
+  { game: "pokemon", label: "Pokémon", setId: "celebrations-pokemon", setName: "Celebrations" },
+  { game: "pokemon", label: "Pokémon", setId: "sv10-destined-rivals-pokemon", setName: "Destined Rivals" },
+  { game: "pokemon", label: "Pokémon", setId: "sv09-journey-together-pokemon", setName: "Journey Together" },
+  { game: "pokemon", label: "Pokémon", setId: "me01-mega-evolution-pokemon", setName: "Mega Evolution" },
+  // One Piece
   { game: "one-piece-card-game", label: "One Piece", setId: "romance-dawn-one-piece-card-game", setName: "Romance Dawn" },
   { game: "one-piece-card-game", label: "One Piece", setId: "paramount-war-one-piece-card-game", setName: "Paramount War" },
+  { game: "one-piece-card-game", label: "One Piece", setId: "pillars-of-strength-one-piece-card-game", setName: "Pillars of Strength" },
+  { game: "one-piece-card-game", label: "One Piece", setId: "kingdoms-of-intrigue-one-piece-card-game", setName: "Kingdoms of Intrigue" },
+  { game: "one-piece-card-game", label: "One Piece", setId: "awakening-of-the-new-era-one-piece-card-game", setName: "Awakening of the New Era" },
   { game: "one-piece-card-game", label: "One Piece", setId: "wings-of-the-captain-one-piece-card-game", setName: "Wings of the Captain" },
-  { game: "one-piece-card-game", label: "One Piece", setId: "two-legends-one-piece-card-game", setName: "Two Legends" },
   { game: "one-piece-card-game", label: "One Piece", setId: "500-years-in-the-future-one-piece-card-game", setName: "500 Years in the Future" },
+  { game: "one-piece-card-game", label: "One Piece", setId: "two-legends-one-piece-card-game", setName: "Two Legends" },
+  { game: "one-piece-card-game", label: "One Piece", setId: "emperors-in-the-new-world-one-piece-card-game", setName: "Emperors in the New World" },
+  { game: "one-piece-card-game", label: "One Piece", setId: "royal-blood-one-piece-card-game", setName: "Royal Blood" },
+  { game: "one-piece-card-game", label: "One Piece", setId: "the-azure-sea-s-seven-one-piece-card-game", setName: "The Azure Sea's Seven" },
+  // Dragon Ball
   { game: "dragon-ball-super-fusion-world", label: "Dragon Ball", setId: "awakened-pulse-dragon-ball-super-fusion-world", setName: "Awakened Pulse" },
   { game: "dragon-ball-super-fusion-world", label: "Dragon Ball", setId: "blazing-aura-dragon-ball-super-fusion-world", setName: "Blazing Aura" },
   { game: "dragon-ball-super-fusion-world", label: "Dragon Ball", setId: "raging-roar-dragon-ball-super-fusion-world", setName: "Raging Roar" },
   { game: "dragon-ball-super-fusion-world", label: "Dragon Ball", setId: "ultra-limit-dragon-ball-super-fusion-world", setName: "Ultra Limit" },
+  { game: "dragon-ball-super-fusion-world", label: "Dragon Ball", setId: "cross-force-dragon-ball-super-fusion-world", setName: "Cross Force" },
+  { game: "dragon-ball-super-fusion-world", label: "Dragon Ball", setId: "dual-evolution-dragon-ball-super-fusion-world", setName: "Dual Evolution" },
+  { game: "dragon-ball-super-fusion-world", label: "Dragon Ball", setId: "rivals-clash-dragon-ball-super-fusion-world", setName: "Rivals Clash" },
+  { game: "dragon-ball-super-fusion-world", label: "Dragon Ball", setId: "wish-for-shenron-dragon-ball-super-fusion-world", setName: "Wish For Shenron" },
+  { game: "dragon-ball-super-fusion-world", label: "Dragon Ball", setId: "saiyan-s-pride-dragon-ball-super-fusion-world", setName: "Saiyan's Pride" },
+  { game: "dragon-ball-super-fusion-world", label: "Dragon Ball", setId: "new-adventure-dragon-ball-super-fusion-world", setName: "New Adventure" },
 ];
+
+// Session cache - persists data during app session to save API calls
+const CACHE = {};
+const CACHE_TTL = 10 * 60 * 1000; // 10 minutes
+
+async function cachedFetch(key, fetchFn) {
+  const now = Date.now();
+  if (CACHE[key] && now - CACHE[key].ts < CACHE_TTL) {
+    return CACHE[key].data;
+  }
+  const data = await fetchFn();
+  CACHE[key] = { data, ts: now };
+  return data;
+}
+
+async function apiCall(body) {
+  const resp = await fetch("/api/justtcg", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  });
+  return resp.json();
+}
 
 function getMarketPrice(card) {
   const variants = card.variants || [];
-  const nm = variants.find(v => v.condition === "Near Mint") || 
+  const nm = variants.find(v => v.condition === "Near Mint") ||
              variants.find(v => v.condition === "Lightly Played") ||
              variants[0];
   return nm?.price || null;
@@ -40,8 +92,7 @@ function getChange(card, period) {
              variants.find(v => v.condition === "Lightly Played") ||
              variants[0];
   if (!nm) return null;
-  const key = `priceChange${period}`;
-  return nm[key] ?? null;
+  return nm[`priceChange${period}`] ?? null;
 }
 
 function getPriceHistory(card) {
@@ -49,11 +100,9 @@ function getPriceHistory(card) {
   const nm = variants.find(v => v.condition === "Near Mint") ||
              variants.find(v => v.condition === "Lightly Played") ||
              variants[0];
-  const history = nm?.priceHistory || [];
-  return history.map(h => ({
-    price: h.price || h.value,
-    date: new Date((h.date || h.timestamp || Date.now() / 1000) * 1000)
-  })).filter(h => h.price);
+  return (nm?.priceHistory || [])
+    .map(h => ({ price: h.price || h.value, date: new Date((h.date || h.timestamp || Date.now() / 1000) * 1000) }))
+    .filter(h => h.price);
 }
 
 function GameTag({ label }) {
@@ -71,10 +120,7 @@ function RiskBadge({ level }) {
 }
 
 function Spinner({ size = 16 }) {
-  return <>
-    <div style={{ width: size, height: size, border: "2px solid currentColor", borderTopColor: "transparent", borderRadius: "50%", animation: "spin 0.7s linear infinite", flexShrink: 0 }} />
-    <style>{`@keyframes spin{to{transform:rotate(360deg)}}`}</style>
-  </>;
+  return <><div style={{ width: size, height: size, border: "2px solid currentColor", borderTopColor: "transparent", borderRadius: "50%", animation: "spin 0.7s linear infinite", flexShrink: 0 }} /><style>{`@keyframes spin{to{transform:rotate(360deg)}}`}</style></>;
 }
 
 function Sparkline({ prices, width = 90, height = 32 }) {
@@ -104,15 +150,11 @@ function PriceChart({ history }) {
       if (chartRef.current) chartRef.current.destroy();
       chartRef.current = new window.Chart(canvasRef.current, {
         type: "line",
-        data: {
-          labels: history.map(h => h.date.toLocaleDateString("en-US", { month: "short", day: "numeric" })),
-          datasets: [{ data: history.map(h => h.price), borderColor: "#3b82f6", backgroundColor: "rgba(59,130,246,0.07)", borderWidth: 2, pointRadius: 2, tension: 0.3, fill: true }]
-        },
+        data: { labels: history.map(h => h.date.toLocaleDateString("en-US", { month: "short", day: "numeric" })), datasets: [{ data: history.map(h => h.price), borderColor: "#3b82f6", backgroundColor: "rgba(59,130,246,0.07)", borderWidth: 2, pointRadius: 2, tension: 0.3, fill: true }] },
         options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { ticks: { autoSkip: true, maxTicksLimit: 8, font: { size: 10 }, color: "#6b7280" }, grid: { display: false } }, y: { ticks: { font: { size: 10 }, color: "#6b7280", callback: v => "$" + (v >= 1000 ? (v / 1000).toFixed(1) + "k" : v) }, grid: { color: "rgba(0,0,0,0.05)" } } } }
       });
     };
-    if (window.Chart) init();
-    else { const s = document.createElement("script"); s.src = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"; s.onload = init; document.head.appendChild(s); }
+    if (window.Chart) init(); else { const s = document.createElement("script"); s.src = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"; s.onload = init; document.head.appendChild(s); }
     return () => { if (chartRef.current) { chartRef.current.destroy(); chartRef.current = null; } };
   }, [history]);
   return <div style={{ position: "relative", width: "100%", height: 200 }}><canvas ref={canvasRef} /></div>;
@@ -127,8 +169,8 @@ function AIAnalysis({ cardData, gameLabel, onClose }) {
       const change7d = getChange(cardData, "7d");
       const change30d = getChange(cardData, "30d");
       const prompt = `You are a trading card market analyst. Analyze this card using live JustTCG data.
-Card: ${cardData.name} | Game: ${gameLabel} | Set: ${cardData.set_name || cardData.setId}
-Live Price: $${price?.toLocaleString()} | 7d Change: ${change7d != null ? change7d.toFixed(1) + "%" : "N/A"} | 30d Change: ${change30d != null ? change30d.toFixed(1) + "%" : "N/A"}
+Card: ${cardData.name} | Game: ${gameLabel} | Set: ${cardData.set_name || cardData.set}
+Live Price: $${price?.toLocaleString()} | 7d: ${change7d != null ? change7d.toFixed(1) + "%" : "N/A"} | 30d: ${change30d != null ? change30d.toFixed(1) + "%" : "N/A"}
 Provide: 1. RISK (Low/Medium/High) 2. BUY ZONE price range 3. SELL TARGET 4. 3-month OUTLOOK 5. KEY FACTORS (2-3 bullets). Under 200 words, plain text.`;
       try {
         const resp = await fetch("/api/analyze", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ prompt }) });
@@ -143,7 +185,7 @@ Provide: 1. RISK (Low/Medium/High) 2. BUY ZONE price range 3. SELL TARGET 4. 3-m
     <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.5)", zIndex: 1000, display: "flex", alignItems: "center", justifyContent: "center", padding: 20 }}>
       <div style={{ background: "var(--color-background-primary)", borderRadius: 12, border: "0.5px solid var(--color-border-secondary)", padding: 24, maxWidth: 540, width: "100%", maxHeight: "80vh", overflowY: "auto" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 16 }}>
-          <div><div style={{ fontSize: 13, color: "var(--color-text-secondary)", marginBottom: 2 }}>AI Analysis · Live JustTCG Data</div><div style={{ fontSize: 16, fontWeight: 600 }}>{cardData.name}</div></div>
+          <div><div style={{ fontSize: 13, color: "var(--color-text-secondary)", marginBottom: 2 }}>AI Analysis · Live JustTCG</div><div style={{ fontSize: 16, fontWeight: 600 }}>{cardData.name}</div></div>
           <button onClick={onClose} style={{ background: "none", border: "none", fontSize: 20, cursor: "pointer", color: "var(--color-text-secondary)" }}>×</button>
         </div>
         {loading ? <div style={{ display: "flex", alignItems: "center", gap: 10, color: "var(--color-text-secondary)", fontSize: 13, padding: "20px 0" }}><Spinner />Analyzing live market data...</div> : <div style={{ fontSize: 13, lineHeight: 1.75, whiteSpace: "pre-wrap" }}>{analysis}</div>}
@@ -161,11 +203,9 @@ function CardDetail({ card, gameLabel, onBack }) {
     async function fetchFull() {
       setLoading(true);
       try {
-        const resp = await fetch("/api/justtcg", {
-          method: "POST", headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ action: "card", cardId: card.id }),
-        });
-        const data = await resp.json();
+        const data = await cachedFetch(`card:${card.id}`, () =>
+          apiCall({ action: "card", cardId: card.id })
+        );
         if (data.card) setFullCard(data.card);
       } catch { }
       setLoading(false);
@@ -182,9 +222,8 @@ function CardDetail({ card, gameLabel, onBack }) {
   const avg = prices.length ? Math.round(prices.reduce((a, b) => a + b, 0) / prices.length) : price;
   const volatility = prices.length > 1 ? Math.sqrt(prices.slice(1).reduce((sum, p, i) => sum + Math.pow((p - prices[i]) / prices[i], 2), 0) / (prices.length - 1)) * 100 : 5;
   const riskLevel = volatility > 12 ? "High" : volatility > 6 ? "Medium" : "Low";
-  const buyZoneLow = Math.round((avg || price || 0) * 0.88);
-  const buyZoneHigh = Math.round((avg || price || 0) * 0.96);
-  const sellTarget = Math.round((avg || price || 0) * 1.18);
+  const base = avg || price || 0;
+  const buyZoneLow = Math.round(base * 0.88), buyZoneHigh = Math.round(base * 0.96), sellTarget = Math.round(base * 1.18);
 
   return (
     <div>
@@ -194,7 +233,7 @@ function CardDetail({ card, gameLabel, onBack }) {
         <div>
           <div style={{ fontSize: 11, color: "var(--color-text-secondary)", marginBottom: 3, display: "flex", alignItems: "center", gap: 6 }}>
             <GameTag label={gameLabel} />
-            <span style={{ textTransform: "uppercase", letterSpacing: "0.05em" }}>{fullCard.set_name || fullCard.setId}</span>
+            <span style={{ textTransform: "uppercase", letterSpacing: "0.05em" }}>{fullCard.set_name || fullCard.set}</span>
             <LiveBadge />
           </div>
           <h2 style={{ margin: 0, fontSize: 20, fontWeight: 600 }}>{fullCard.name}</h2>
@@ -235,25 +274,125 @@ function CardDetail({ card, gameLabel, onBack }) {
 
       {fullCard.variants && fullCard.variants.length > 0 && (
         <div style={{ background: "var(--color-background-primary)", border: "0.5px solid var(--color-border-tertiary)", borderRadius: 10, padding: "14px 16px" }}>
-          <div style={{ fontSize: 12, fontWeight: 500, color: "var(--color-text-secondary)", marginBottom: 10, textTransform: "uppercase", letterSpacing: "0.04em" }}>
-            All Variants <span style={{ color: "#185fa5", fontWeight: 700 }}>● JustTCG Live</span>
-          </div>
+          <div style={{ fontSize: 12, fontWeight: 500, color: "var(--color-text-secondary)", marginBottom: 10, textTransform: "uppercase", letterSpacing: "0.04em" }}>All Variants <span style={{ color: "#185fa5", fontWeight: 700 }}>● Live</span></div>
           <div style={{ overflowX: "auto" }}>
             <table style={{ width: "100%", fontSize: 12, borderCollapse: "collapse" }}>
-              <thead><tr style={{ borderBottom: "0.5px solid var(--color-border-secondary)" }}>{["Condition", "Printing", "Price"].map(h => <th key={h} style={{ padding: "6px 10px", textAlign: "left", fontWeight: 500, color: "var(--color-text-secondary)", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.04em" }}>{h}</th>)}</tr></thead>
-              <tbody>{fullCard.variants.map((v, i) => (
-                <tr key={i} style={{ borderBottom: "0.5px solid var(--color-border-tertiary)" }}>
-                  <td style={{ padding: "6px 10px" }}><span style={{ background: "var(--color-background-info)", color: "var(--color-text-info)", fontSize: 10, padding: "2px 6px", borderRadius: 4, fontWeight: 500 }}>{v.condition}</span></td>
-                  <td style={{ padding: "6px 10px", color: "var(--color-text-secondary)" }}>{v.printing || "—"}</td>
-                  <td style={{ padding: "6px 10px", fontWeight: 700, fontVariantNumeric: "tabular-nums" }}>{v.price ? `$${Number(v.price).toLocaleString()}` : "—"}</td>
-                </tr>
-              ))}</tbody>
+              <thead><tr style={{ borderBottom: "0.5px solid var(--color-border-secondary)" }}>{["Condition", "Printing", "Price", "7d"].map(h => <th key={h} style={{ padding: "6px 10px", textAlign: "left", fontWeight: 500, color: "var(--color-text-secondary)", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.04em" }}>{h}</th>)}</tr></thead>
+              <tbody>{fullCard.variants.slice(0, 15).map((v, i) => {
+                const chg = v.priceChange7d;
+                return (
+                  <tr key={i} style={{ borderBottom: "0.5px solid var(--color-border-tertiary)" }}>
+                    <td style={{ padding: "6px 10px" }}><span style={{ background: "var(--color-background-info)", color: "var(--color-text-info)", fontSize: 10, padding: "2px 6px", borderRadius: 4, fontWeight: 500 }}>{v.condition}</span></td>
+                    <td style={{ padding: "6px 10px", color: "var(--color-text-secondary)", fontSize: 11 }}>{v.printing || "—"}</td>
+                    <td style={{ padding: "6px 10px", fontWeight: 700, fontVariantNumeric: "tabular-nums" }}>{v.price ? `$${Number(v.price).toLocaleString()}` : "—"}</td>
+                    <td style={{ padding: "6px 10px", fontSize: 11, fontWeight: 600, color: chg > 0 ? "#16a34a" : chg < 0 ? "#dc2626" : "var(--color-text-secondary)" }}>{chg != null ? `${chg > 0 ? "+" : ""}${Number(chg).toFixed(1)}%` : "—"}</td>
+                  </tr>
+                );
+              })}</tbody>
             </table>
           </div>
         </div>
       )}
-
       {showAI && <AIAnalysis cardData={fullCard} gameLabel={gameLabel} onClose={() => setShowAI(false)} />}
+    </div>
+  );
+}
+
+function SearchView({ onCardClick }) {
+  const [query, setQuery] = useState("");
+  const [game, setGame] = useState("");
+  const [results, setResults] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [searched, setSearched] = useState(false);
+  const debounceRef = useRef(null);
+
+  const doSearch = useCallback(async (q, g) => {
+    if (!q.trim()) { setResults([]); setSearched(false); return; }
+    setLoading(true);
+    setSearched(true);
+    try {
+      const cacheKey = `search:${g}:${q}`;
+      const data = await cachedFetch(cacheKey, () =>
+        apiCall({ action: "search", game: g || undefined, q })
+      );
+      setResults(data.cards || []);
+    } catch { setResults([]); }
+    setLoading(false);
+  }, []);
+
+  useEffect(() => {
+    clearTimeout(debounceRef.current);
+    debounceRef.current = setTimeout(() => doSearch(query, game), 500);
+    return () => clearTimeout(debounceRef.current);
+  }, [query, game, doSearch]);
+
+  const gameLabel = (g) => GAME_CONFIGS.find(c => c.game === g)?.label || "Unknown";
+
+  return (
+    <div>
+      <div style={{ marginBottom: 16 }}>
+        <h2 style={{ fontSize: 20, fontWeight: 600, margin: "0 0 4px" }}>Search Cards</h2>
+        <p style={{ margin: 0, fontSize: 13, color: "var(--color-text-secondary)" }}>Search across all games and sets in real time</p>
+      </div>
+      <div style={{ display: "flex", gap: 8, marginBottom: 16, flexWrap: "wrap" }}>
+        <input
+          value={query}
+          onChange={e => setQuery(e.target.value)}
+          placeholder="Search by card name..."
+          style={{ flex: 1, minWidth: 200, fontSize: 13 }}
+          autoFocus
+        />
+        <select value={game} onChange={e => setGame(e.target.value)} style={{ fontSize: 13 }}>
+          <option value="">All games</option>
+          {GAME_CONFIGS.map(g => <option key={g.game} value={g.game}>{g.label}</option>)}
+        </select>
+      </div>
+
+      {loading && (
+        <div style={{ display: "flex", alignItems: "center", gap: 8, color: "var(--color-text-secondary)", fontSize: 13, padding: "20px 0" }}>
+          <Spinner />Searching JustTCG...
+        </div>
+      )}
+
+      {!loading && searched && results.length === 0 && (
+        <div style={{ textAlign: "center", padding: "40px 0", color: "var(--color-text-secondary)", fontSize: 13 }}>No cards found for "{query}"</div>
+      )}
+
+      {!loading && !searched && (
+        <div style={{ textAlign: "center", padding: "40px 0", color: "var(--color-text-secondary)", fontSize: 13 }}>
+          Start typing to search across all TCG cards
+        </div>
+      )}
+
+      <div style={{ display: "grid", gap: 8 }}>
+        {results.map((card, idx) => {
+          const price = getMarketPrice(card);
+          const change7d = getChange(card, "7d");
+          const trendColor = change7d != null ? (change7d >= 0 ? "#16a34a" : "#dc2626") : "var(--color-text-secondary)";
+          const label = gameLabel(card.game?.toLowerCase().replace(/ /g, "-") || card.game_id);
+          return (
+            <div key={card.id || idx} onClick={() => onCardClick(card, label)}
+              style={{ background: "var(--color-background-primary)", border: "0.5px solid var(--color-border-tertiary)", borderRadius: 10, padding: "12px 16px", cursor: "pointer", display: "flex", alignItems: "center", gap: 12, transition: "border-color 0.15s" }}
+              onMouseEnter={e => e.currentTarget.style.borderColor = "var(--color-border-secondary)"}
+              onMouseLeave={e => e.currentTarget.style.borderColor = "var(--color-border-tertiary)"}
+            >
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <div style={{ fontSize: 10, marginBottom: 3, display: "flex", alignItems: "center", gap: 5 }}>
+                  <GameTag label={label} />
+                  <span style={{ color: "var(--color-text-secondary)" }}>{card.set_name}</span>
+                  {card.number && <span style={{ color: "var(--color-text-tertiary)" }}>#{card.number}</span>}
+                </div>
+                <div style={{ fontSize: 14, fontWeight: 600, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{card.name}</div>
+                {card.rarity && <div style={{ fontSize: 11, color: "var(--color-text-secondary)", marginTop: 2 }}>{card.rarity}</div>}
+              </div>
+              <div style={{ textAlign: "right", flexShrink: 0 }}>
+                <div style={{ fontSize: 15, fontWeight: 700, fontVariantNumeric: "tabular-nums" }}>{price ? `$${Number(price).toLocaleString()}` : "—"}</div>
+                {change7d != null && <div style={{ fontSize: 11, color: trendColor, fontWeight: 600 }}>{change7d >= 0 ? "▲" : "▼"} {Math.abs(change7d).toFixed(1)}%</div>}
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
@@ -268,11 +407,9 @@ function SetTopCards({ setConfig, onCardClick }) {
       setLoading(true);
       setError(null);
       try {
-        const resp = await fetch("/api/justtcg", {
-          method: "POST", headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ action: "top_cards", game: setConfig.game, setId: setConfig.setId, orderBy: "price", order: "desc", limit: 10 }),
-        });
-        const data = await resp.json();
+        const data = await cachedFetch(`top:${setConfig.setId}`, () =>
+          apiCall({ action: "top_cards", game: setConfig.game, setId: setConfig.setId, orderBy: "price", order: "desc", limit: 10 })
+        );
         if (data.cards) setCards(data.cards);
         else setError(data.error || "No data");
       } catch (e) { setError(e.message); }
@@ -289,16 +426,19 @@ function SetTopCards({ setConfig, onCardClick }) {
         <span style={{ fontSize: 11, color: "var(--color-text-secondary)" }}>Top 10 by price</span>
         {!loading && !error && <LiveBadge />}
       </div>
-      {loading && <div style={{ display: "flex", alignItems: "center", gap: 8, color: "var(--color-text-secondary)", fontSize: 12, padding: "12px 0" }}><Spinner size={14} />Fetching top cards...</div>}
+      {loading && <div style={{ display: "flex", alignItems: "center", gap: 8, color: "var(--color-text-secondary)", fontSize: 12, padding: "12px 0" }}><Spinner size={14} />Fetching...</div>}
       {error && <div style={{ fontSize: 12, color: "var(--color-text-danger)", padding: "8px 0" }}>Could not load: {error}</div>}
-      {!loading && !error && cards.length === 0 && <div style={{ fontSize: 12, color: "var(--color-text-secondary)" }}>No cards found for this set</div>}
       <div style={{ display: "grid", gap: 6 }}>
         {cards.map((card, idx) => {
           const price = getMarketPrice(card);
           const change7d = getChange(card, "7d");
           const trendColor = change7d != null ? (change7d >= 0 ? "#16a34a" : "#dc2626") : "var(--color-text-secondary)";
           return (
-            <div key={card.id || idx} onClick={() => onCardClick(card, setConfig.label)} style={{ background: "var(--color-background-primary)", border: "0.5px solid var(--color-border-tertiary)", borderRadius: 8, padding: "10px 14px", cursor: "pointer", display: "flex", alignItems: "center", gap: 10, transition: "border-color 0.15s" }} onMouseEnter={e => e.currentTarget.style.borderColor = "var(--color-border-secondary)"} onMouseLeave={e => e.currentTarget.style.borderColor = "var(--color-border-tertiary)"}>
+            <div key={card.id || idx} onClick={() => onCardClick(card, setConfig.label)}
+              style={{ background: "var(--color-background-primary)", border: "0.5px solid var(--color-border-tertiary)", borderRadius: 8, padding: "10px 14px", cursor: "pointer", display: "flex", alignItems: "center", gap: 10 }}
+              onMouseEnter={e => e.currentTarget.style.borderColor = "var(--color-border-secondary)"}
+              onMouseLeave={e => e.currentTarget.style.borderColor = "var(--color-border-tertiary)"}
+            >
               <div style={{ width: 20, height: 20, borderRadius: "50%", background: "var(--color-background-secondary)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10, fontWeight: 700, color: "var(--color-text-secondary)", flexShrink: 0 }}>{idx + 1}</div>
               <div style={{ flex: 1, minWidth: 0 }}>
                 <div style={{ fontSize: 13, fontWeight: 600, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{card.name}</div>
@@ -318,13 +458,11 @@ function SetTopCards({ setConfig, onCardClick }) {
 
 function MarketView({ onCardClick }) {
   const [activeGames, setActiveGames] = useState(["pokemon", "one-piece-card-game", "dragon-ball-super-fusion-world"]);
-  const [search, setSearch] = useState("");
   const [selectedSet, setSelectedSet] = useState("all");
+  const [loadAll, setLoadAll] = useState(false);
 
-  const visibleSets = FEATURED_SETS.filter(s =>
-    activeGames.includes(s.game) &&
-    (selectedSet === "all" || s.setId === selectedSet)
-  );
+  const visibleSets = FEATURED_SETS.filter(s => activeGames.includes(s.game) && (selectedSet === "all" || s.setId === selectedSet));
+  const displaySets = loadAll ? visibleSets : visibleSets.slice(0, 8);
 
   return (
     <>
@@ -336,11 +474,11 @@ function MarketView({ onCardClick }) {
         <p style={{ margin: 0, fontSize: 13, color: "var(--color-text-secondary)" }}>Top 10 most valuable cards per set · Powered by JustTCG</p>
       </div>
 
-      <div style={{ display: "flex", gap: 6, marginBottom: 12, flexWrap: "wrap" }}>
-        {GAME_CONFIGS.map(g => {
+      <div style={{ display: "flex", gap: 6, marginBottom: 8, flexWrap: "wrap" }}>
+        {GAME_CONFIGS.slice(0, 5).map(g => {
           const active = activeGames.includes(g.game);
           return (
-            <button key={g.game} onClick={() => setActiveGames(prev => active ? prev.filter(x => x !== g.game) : [...prev, g.game])}
+            <button key={g.game} onClick={() => setActiveGames(prev => active && prev.length > 1 ? prev.filter(x => x !== g.game) : [...new Set([...prev, g.game])])}
               style={{ fontSize: 11, padding: "5px 12px", fontWeight: 600, borderRadius: 20, border: active ? `1.5px solid ${g.color.color}` : "0.5px solid var(--color-border-tertiary)", background: active ? g.color.bg : "transparent", color: active ? g.color.color : "var(--color-text-secondary)", cursor: "pointer" }}>
               {g.label}
             </button>
@@ -352,21 +490,26 @@ function MarketView({ onCardClick }) {
         </select>
       </div>
 
-      {visibleSets.map(setConfig => (
+      {displaySets.map(setConfig => (
         <SetTopCards key={`${setConfig.game}-${setConfig.setId}`} setConfig={setConfig} onCardClick={onCardClick} />
       ))}
+
+      {!loadAll && visibleSets.length > 8 && (
+        <button onClick={() => setLoadAll(true)} style={{ width: "100%", padding: "10px", fontSize: 13, fontWeight: 600, marginTop: 4 }}>
+          Load {visibleSets.length - 8} more sets ↓
+        </button>
+      )}
     </>
   );
 }
 
-function ScannerView() {
+function ScannerView({ onCardClick }) {
   const [alerts, setAlerts] = useState([]);
   const [scanning, setScanning] = useState(false);
   const [lastScan, setLastScan] = useState(null);
   const [filter, setFilter] = useState("all");
   const [autoScan, setAutoScan] = useState(false);
   const intervalRef = useRef(null);
-  const [selectedCard, setSelectedCard] = useState(null);
 
   const runScan = useCallback(async () => {
     setScanning(true);
@@ -374,31 +517,26 @@ function ScannerView() {
     try {
       const games = ["pokemon", "one-piece-card-game", "dragon-ball-super-fusion-world"];
       const gameLabels = { "pokemon": "Pokémon", "one-piece-card-game": "One Piece", "dragon-ball-super-fusion-world": "Dragon Ball" };
-
       await Promise.all(games.map(async game => {
-        const [moversResp, dealsResp] = await Promise.all([
-          fetch("/api/justtcg", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ action: "movers", game, orderBy: "7d" }) }),
-          fetch("/api/justtcg", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ action: "deals", game, orderBy: "7d" }) }),
+        const [moversData, dealsData] = await Promise.all([
+          cachedFetch(`movers:${game}`, () => apiCall({ action: "movers", game, orderBy: "7d" })),
+          cachedFetch(`deals:${game}`, () => apiCall({ action: "deals", game, orderBy: "7d" })),
         ]);
-        const moversData = await moversResp.json();
-        const dealsData = await dealsResp.json();
         const label = gameLabels[game];
-
         (moversData.cards || []).slice(0, 5).forEach(card => {
           const price = getMarketPrice(card);
-          const change = getChange(card, "7d");
-          if (!price || change == null) return;
-          if (change > 5) newAlerts.push({ id: `up-${card.id}`, type: "buyzone", card: card.name, cardData: card, gameLabel: label, message: `Up ${change.toFixed(1)}% in 7 days — momentum`, price: Math.round(price), change, platform: "JustTCG", time: new Date(), severity: change > 15 ? "high" : "medium" });
+          const nm = (card.variants || []).find(v => v.condition === "Near Mint") || card.variants?.[0];
+          const change = nm?.priceChange7d;
+          if (!price || change == null || change <= 5) return;
+          newAlerts.push({ id: `up-${card.id}`, type: "buyzone", card: card.name, cardData: card, gameLabel: label, message: `Up ${change.toFixed(1)}% in 7 days`, price: Math.round(price), change, time: new Date(), severity: change > 15 ? "high" : "medium" });
         });
-
         (dealsData.cards || []).slice(0, 5).forEach(card => {
           const price = getMarketPrice(card);
-          const change = getChange(card, "7d");
-          if (!price || change == null) return;
-          if (change < -3) {
-            newAlerts.push({ id: `down-${card.id}`, type: "underpriced", card: card.name, cardData: card, gameLabel: label, message: `Down ${Math.abs(change).toFixed(1)}% — potential buy`, price: Math.round(price), change, platform: "JustTCG", time: new Date(), severity: change < -10 ? "high" : "medium" });
-            newAlerts.push({ id: `drop-${card.id}`, type: "pricedrop", card: card.name, cardData: card, gameLabel: label, message: `Dropped ${Math.abs(change).toFixed(1)}% this week`, price: Math.round(price), change, platform: "JustTCG", time: new Date(), severity: change < -10 ? "high" : "low" });
-          }
+          const nm = (card.variants || []).find(v => v.condition === "Near Mint") || card.variants?.[0];
+          const change = nm?.priceChange7d;
+          if (!price || change == null || change >= -3) return;
+          newAlerts.push({ id: `down-${card.id}`, type: "underpriced", card: card.name, cardData: card, gameLabel: label, message: `Down ${Math.abs(change).toFixed(1)}% — potential buy`, price: Math.round(price), change, time: new Date(), severity: change < -10 ? "high" : "medium" });
+          newAlerts.push({ id: `drop-${card.id}`, type: "pricedrop", card: card.name, cardData: card, gameLabel: label, message: `Dropped ${Math.abs(change).toFixed(1)}% this week`, price: Math.round(price), change, time: new Date(), severity: change < -10 ? "high" : "low" });
         });
       }));
     } catch (e) { console.error("Scanner:", e); }
@@ -414,8 +552,6 @@ function ScannerView() {
     return () => clearInterval(intervalRef.current);
   }, [autoScan, runScan]);
 
-  if (selectedCard) return <CardDetail card={selectedCard.card} gameLabel={selectedCard.label} onBack={() => setSelectedCard(null)} />;
-
   const filtered = filter === "all" ? alerts : alerts.filter(a => a.type === filter);
   const counts = { underpriced: alerts.filter(a => a.type === "underpriced").length, buyzone: alerts.filter(a => a.type === "buyzone").length, pricedrop: alerts.filter(a => a.type === "pricedrop").length };
   const highSeverity = alerts.filter(a => a.severity === "high").length;
@@ -429,14 +565,14 @@ function ScannerView() {
             <LiveBadge />
             {highSeverity > 0 && <span style={{ background: "#fcebeb", color: "#791f1f", fontSize: 11, fontWeight: 700, padding: "2px 8px", borderRadius: 20 }}>{highSeverity} urgent</span>}
           </div>
-          <div style={{ fontSize: 12, color: "var(--color-text-secondary)" }}>{lastScan ? `Last scan: ${lastScan.toLocaleTimeString()} · ${alerts.length} signals from JustTCG` : "Scanning..."}</div>
+          <div style={{ fontSize: 12, color: "var(--color-text-secondary)" }}>{lastScan ? `Last scan: ${lastScan.toLocaleTimeString()} · ${alerts.length} signals` : "Scanning..."}</div>
         </div>
         <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 12, color: "var(--color-text-secondary)" }}>
             <div onClick={() => setAutoScan(!autoScan)} style={{ width: 32, height: 18, borderRadius: 9, background: autoScan ? "#16a34a" : "var(--color-border-secondary)", cursor: "pointer", position: "relative", transition: "background 0.2s" }}>
               <div style={{ width: 14, height: 14, borderRadius: "50%", background: "#fff", position: "absolute", top: 2, left: autoScan ? 16 : 2, transition: "left 0.2s" }} />
             </div>
-            Auto (60s)
+            Auto
           </div>
           <button onClick={runScan} disabled={scanning} style={{ fontSize: 12, padding: "6px 14px", fontWeight: 600, opacity: scanning ? 0.6 : 1 }}>{scanning ? "Scanning..." : "Scan now"}</button>
         </div>
@@ -461,13 +597,16 @@ function ScannerView() {
           {filtered.length === 0 && <div style={{ textAlign: "center", padding: "40px 0", color: "var(--color-text-secondary)", fontSize: 13 }}>No signals — try scanning again</div>}
           {filtered.map(alert => {
             const cfg = { underpriced: { bg: "#eaf3de", border: "#c0dd97", color: "#27500a", label: "Underpriced" }, buyzone: { bg: "#e6f1fb", border: "#b5d4f4", color: "#0c447c", label: "Momentum" }, pricedrop: { bg: "#fcebeb", border: "#f7c1c1", color: "#791f1f", label: "Price Drop" } }[alert.type];
-            const severityDot = { high: "#dc2626", medium: "#d97706", low: "#16a34a" }[alert.severity];
+            const dot = { high: "#dc2626", medium: "#d97706", low: "#16a34a" }[alert.severity];
             return (
-              <div key={alert.id} onClick={() => setSelectedCard({ card: alert.cardData, label: alert.gameLabel })} style={{ background: cfg.bg, border: `0.5px solid ${cfg.border}`, borderRadius: 10, padding: "11px 14px", cursor: "pointer" }} onMouseEnter={e => e.currentTarget.style.opacity = "0.85"} onMouseLeave={e => e.currentTarget.style.opacity = "1"}>
+              <div key={alert.id} onClick={() => onCardClick(alert.cardData, alert.gameLabel)}
+                style={{ background: cfg.bg, border: `0.5px solid ${cfg.border}`, borderRadius: 10, padding: "11px 14px", cursor: "pointer" }}
+                onMouseEnter={e => e.currentTarget.style.opacity = "0.85"} onMouseLeave={e => e.currentTarget.style.opacity = "1"}
+              >
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 5 }}>
                   <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
                     <span style={{ fontSize: 11, fontWeight: 700, color: cfg.color, textTransform: "uppercase", letterSpacing: "0.04em" }}>{cfg.label}</span>
-                    <span style={{ width: 6, height: 6, borderRadius: "50%", background: severityDot, display: "inline-block" }} />
+                    <span style={{ width: 6, height: 6, borderRadius: "50%", background: dot, display: "inline-block" }} />
                     <GameTag label={alert.gameLabel} />
                   </div>
                   <span style={{ fontSize: 11, color: cfg.color, opacity: 0.7 }}>JustTCG live</span>
@@ -492,10 +631,8 @@ function WatchlistTicker() {
   useEffect(() => {
     async function fetchTicker() {
       try {
-        const resp = await fetch("/api/justtcg", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ action: "top_cards", game: "pokemon", orderBy: "price", order: "desc", limit: 5 }) });
-        const data = await resp.json();
-        const resp2 = await fetch("/api/justtcg", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ action: "top_cards", game: "one-piece", orderBy: "price", order: "desc", limit: 3 }) });
-        const data2 = await resp2.json();
+        const data = await cachedFetch("ticker:pokemon", () => apiCall({ action: "top_cards", game: "pokemon", setId: "sv-scarlet-violet-151-pokemon", orderBy: "price", order: "desc", limit: 5 }));
+        const data2 = await cachedFetch("ticker:onepiece", () => apiCall({ action: "top_cards", game: "one-piece-card-game", setId: "romance-dawn-one-piece-card-game", orderBy: "price", order: "desc", limit: 3 }));
         const all = [...(data.cards || []), ...(data2.cards || [])];
         setItems(all.map(c => {
           const price = getMarketPrice(c);
@@ -506,7 +643,6 @@ function WatchlistTicker() {
     }
     fetchTicker();
   }, []);
-
   if (!items.length) return null;
   const text = items.join("   ·   ") + "   ·   ";
   return (
@@ -521,9 +657,7 @@ export default function App() {
   const [view, setView] = useState("market");
   const [selectedCard, setSelectedCard] = useState(null);
 
-  const handleCardClick = (card, gameLabel) => {
-    setSelectedCard({ card, gameLabel });
-  };
+  const handleCardClick = (card, gameLabel) => setSelectedCard({ card, gameLabel });
 
   return (
     <div style={{ fontFamily: "var(--font-sans)", maxWidth: 760, margin: "0 auto", paddingBottom: 60 }}>
@@ -534,12 +668,13 @@ export default function App() {
         ) : (
           <>
             <div style={{ display: "flex", gap: 4, marginBottom: 18, background: "var(--color-background-secondary)", borderRadius: 10, padding: 4 }}>
-              {[{ key: "market", label: "Market" }, { key: "scanner", label: "Scanner" }].map(t => (
+              {[{ key: "market", label: "Market" }, { key: "search", label: "Search" }, { key: "scanner", label: "Scanner" }].map(t => (
                 <button key={t.key} onClick={() => setView(t.key)} style={{ flex: 1, padding: "7px 0", fontSize: 13, fontWeight: 600, border: "none", borderRadius: 7, background: view === t.key ? "var(--color-background-primary)" : "transparent", color: view === t.key ? "var(--color-text-primary)" : "var(--color-text-secondary)", cursor: "pointer", transition: "all 0.15s", boxShadow: view === t.key ? "0 0 0 0.5px var(--color-border-secondary)" : "none" }}>{t.label}</button>
               ))}
             </div>
             {view === "market" && <MarketView onCardClick={handleCardClick} />}
-            {view === "scanner" && <ScannerView />}
+            {view === "search" && <SearchView onCardClick={handleCardClick} />}
+            {view === "scanner" && <ScannerView onCardClick={handleCardClick} />}
           </>
         )}
       </div>
